@@ -62,28 +62,32 @@ class AIGUI:
         self.prompt_input.insert("1.0", "Write 200 things a CEO can do.")
 
         # Parameters Frame
-        params_frame = ttk.Frame(self.main_frame)
-        params_frame.pack(fill=tk.X, pady=(0, 10))
+        params_frame = ttk.Frame(self.main_frame, style="MainFrame.TFrame")
+        params_frame.pack(pady=(0, 10))
+        
+        # Center frame for temperature and tokens
+        center_frame = ttk.Frame(params_frame, style="MainFrame.TFrame")
+        center_frame.pack(expand=True)
 
         # Temperature Label and Entry
-        temp_label = ttk.Label(params_frame, text="Temperature:", style="MainLabel.TLabel")
+        temp_label = ttk.Label(center_frame, text="Temperature:", style="MainLabel.TLabel")
         temp_label.pack(side=tk.LEFT, padx=(0, 5))
         
-        self.temperature_var = tk.StringVar(value="0.7")
-        self.temperature_entry = ttk.Entry(params_frame, textvariable=self.temperature_var, width=8)
+        self.temperature_var = tk.StringVar(value="0.28")
+        self.temperature_entry = ttk.Entry(center_frame, textvariable=self.temperature_var, width=10)
         self.temperature_entry.pack(side=tk.LEFT, padx=(0, 20))
 
         # Max Tokens Label and Entry
-        tokens_label = ttk.Label(params_frame, text="Max Tokens:", style="MainLabel.TLabel")
+        tokens_label = ttk.Label(center_frame, text="Max Tokens:", style="MainLabel.TLabel")
         tokens_label.pack(side=tk.LEFT, padx=(0, 5))
         
-        self.max_tokens_var = tk.StringVar(value="-1")
-        self.max_tokens_entry = ttk.Entry(params_frame, textvariable=self.max_tokens_var, width=8)
+        self.max_tokens_var = tk.StringVar(value="2000")
+        self.max_tokens_entry = ttk.Entry(center_frame, textvariable=self.max_tokens_var, width=10)
         self.max_tokens_entry.pack(side=tk.LEFT)
 
         # Models available in Jan AI
         self.models = [
-            ("llama3.2-3b-instruct", "llama3.2-3b-instruct"),
+            ("llama3.2-3b-instruct", "llama3.2-3b-instruct")
         ]
         self.selected_model = tk.StringVar(value=self.models[0][0])
 
@@ -97,7 +101,8 @@ class AIGUI:
             textvariable=self.selected_model,
             values=[m[0] for m in self.models],
             state="readonly",
-            font=("TkDefaultFont", 12)
+            font=("TkDefaultFont", 12),
+            width=40  # Make the dropdown wider
         )
         self.model_dropdown.pack(pady=(0,10))
 
