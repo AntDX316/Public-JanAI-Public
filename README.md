@@ -2,13 +2,13 @@ https://jan.ai/
 
 # Jan AI Response Streamer
 
-The Jan AI Response Streamer is a sleek, user-friendly desktop application that provides a seamless interface for interacting with Jan AI's language models.
+A sleek and intuitive desktop application that provides a seamless interface for interacting with Jan AI.
 
-Built with Python and Tkinter, it features real-time response streaming, allowing users to see AI responses appear instantly as they're generated.
+This app features real-time response streaming, allowing you to see AI responses as they're being generated, with support for markdown formatting for beautifully styled outputs.
 
-The app includes essential controls for customizing AI behavior, including temperature and token settings, along with support for markdown formatting in responses.
+Built with Python and Tkinter, it offers essential features like adjustable temperature settings, customizable system prompts, and the ability to stop generation mid-stream.
 
-With its clean, modern interface, users can easily input system messages and prompts, start or stop generation at any time, and view beautifully formatted responses in a scrollable window. It's perfect for developers, writers, or anyone looking to interact with Jan AI in a more polished and controlled environment than a command line interface.
+Perfect for developers and users who want a native, lightweight interface for their local Jan AI instance.
 
 ## Features
 
