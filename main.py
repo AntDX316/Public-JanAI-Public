@@ -73,7 +73,7 @@ class AIGUI:
         temp_label = ttk.Label(center_frame, text="Temperature:", style="MainLabel.TLabel")
         temp_label.pack(side=tk.LEFT, padx=(0, 5))
         
-        self.temperature_var = tk.StringVar(value="0.28")
+        self.temperature_var = tk.StringVar(value="0.7")
         self.temperature_entry = ttk.Entry(center_frame, textvariable=self.temperature_var, width=10)
         self.temperature_entry.pack(side=tk.LEFT, padx=(0, 20))
 
