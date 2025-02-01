@@ -81,7 +81,7 @@ class AIGUI:
         tokens_label = ttk.Label(center_frame, text="Max Tokens:", style="MainLabel.TLabel")
         tokens_label.pack(side=tk.LEFT, padx=(0, 5))
         
-        self.max_tokens_var = tk.StringVar(value="2000")
+        self.max_tokens_var = tk.StringVar(value="8192")
         self.max_tokens_entry = ttk.Entry(center_frame, textvariable=self.max_tokens_var, width=10)
         self.max_tokens_entry.pack(side=tk.LEFT)
 
